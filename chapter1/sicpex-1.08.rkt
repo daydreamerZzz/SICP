@@ -1,0 +1,20 @@
+#lang planet neil/sicp
+(define (good-enough? x y)
+  (< (/ (abs (- x y)) y) 0.00001))
+(define (abs x)
+  (if (< x 0)
+      (- 0 x)
+      x))
+(define (cbrt-iter last-guess guess x)
+  (if (good-enough? guess last-guess)
+      guess
+      (cbrt-iter guess (improve guess x) x)))
+(define (improve guess x)
+  (/ (+ (/ x (square guess)) (* 2 guess)) 3))
+(define (square x) (* x x))
+(define (cube-root x)
+  (cbrt-iter 0.5 1.0 x))
+
+(cube-root 8)
+(cube-root 1)
+(cube-root 999999999)
