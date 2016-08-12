@@ -1,2 +1,2 @@
 # SICP
-exercise answers and some examples from the book
+exercise answers and some examples from the book (second edition)
