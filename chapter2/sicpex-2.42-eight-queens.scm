@@ -51,7 +51,7 @@
 
 
 (define (safe? k positions) 
-  ;;check if queen in last and first columns are safe, chop off first column and repeat.
+  ;;check if queen in last and first columns' queens are safe, chop off first column and repeat.
   (not (or (if (or (null? (cdr positions)) (null? positions) (= k 1))
 	       false
 	       (let ((cur-first-queen (car positions))
